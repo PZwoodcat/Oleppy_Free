@@ -15,7 +15,7 @@ First paper - https://hal.science/hal-02465792/document - This one is often refe
 Second paper - https://www.mdpi.com/2076-3417/11/1/74?utm_source=chatgpt.com - for cross-referencing
 
 First,
-```
+```math
 L \propto \left(\frac{RGB}{255}\right)^{2.2}
 ```
 From GPT The sRGB color space specification (IEC 61966-2-1) defines a reference display gamma of approximately 2.2 (https://www.w3.org/Graphics/Color/srgb?utm_source=chatgpt.com)
