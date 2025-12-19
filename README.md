@@ -27,7 +27,7 @@ OLEDs have a non-linear I-V curve
 
 So we conclude
 ```math
-\C(J) = C_0(J/J_0)^(n-m)\
+C(J) = C_0(J/J_0)^{n-m}
 ```
 where J_0 = reference current density, C_0 = fitted constant at J_0, n = luminance–lifetime exponent, m = current acceleration exponent
 we try n = 1.5, m=2.3
