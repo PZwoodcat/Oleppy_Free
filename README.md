@@ -11,9 +11,13 @@ the wear maps look really cool, and who knows? It might actually show you someth
 
 # Theoretical discussion
 This project will be based off my reading of these 2 papers, as well as whatever knowledge summarization GPT cooks up. 
-First paper - https://hal.science/hal-02465792/document - This one is often referenced in discussions of OLED burn in. It is a good multi-factor study of OLED degradation across multiple factors such as driving current, temperature and time.
+First paper - https://hal.science/hal-02465792/document - This one is often referenced in discussions of OLED burn in. It is a multi-factor study of OLED degradation across multiple factors such as driving current, temperature and time.
 Second paper - https://www.mdpi.com/2076-3417/11/1/74?utm_source=chatgpt.com - for cross-referencing
-Luminance∝(RGB/255​)^2.2
+
+First, 
+$$
+\Luminance L∝(RGB/255​)^2.2\
+$$
 From GPT The sRGB color space specification (IEC 61966-2-1) defines a reference display gamma of approximately 2.2 (https://www.w3.org/Graphics/Color/srgb?utm_source=chatgpt.com)
 Also GPT: For an OLED pixel:
 
@@ -22,8 +26,9 @@ Luminance ≈(Approx) proportional to current, not voltage
 OLEDs have a non-linear I-V curve
 
 So we conclude
-	​
-C(J) = C_0(J/J_0)^(n-m)
+$$
+\C(J) = C_0(J/J_0)^(n-m)\
+$$
 where J_0 = reference current density, C_0 = fitted constant at J_0, n = luminance–lifetime exponent, m = current acceleration exponent
 we try n = 1.5, m=2.3
 So anyway roughly C ∝ (I/I_0)^0.8
