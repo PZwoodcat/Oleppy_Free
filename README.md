@@ -12,9 +12,9 @@ the wear maps look really cool, and who knows? It might actually show you someth
 # Theoretical discussion
 This project will be based off my reading of these 2 papers, as well as whatever knowledge summarization GPT cooks up. 
 First paper - https://hal.science/hal-02465792/document - This one is often referenced in discussions of OLED burn in. It is a multi-factor study of OLED degradation across multiple factors such as driving current, temperature and time.
-Second paper - https://www.mdpi.com/2076-3417/11/1/74?utm_source=chatgpt.com - for cross-referencing
+Second paper - https://www.mdpi.com/2076-3417/11/1/74?utm_source=chatgpt.com - for cross-referencing\
 
-First, 
+First,\ 
 $$
 L \propto \left(\frac{RGB}{255}\right)^{2.2}
 $$
