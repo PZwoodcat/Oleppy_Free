@@ -26,19 +26,28 @@ Luminance ≈(Approx) proportional to current, not voltage
 OLEDs have a non-linear I-V curve
 
 So we conclude
-$$
+```math
 \C(J) = C_0(J/J_0)^(n-m)\
-$$
+```
 where J_0 = reference current density, C_0 = fitted constant at J_0, n = luminance–lifetime exponent, m = current acceleration exponent
 we try n = 1.5, m=2.3
-So anyway roughly C ∝ (I/I_0)^0.8
+So anyway roughly 
+```math
+C ∝ (I/I_0)^0.8
+```
 Now,
+```math
 L(t)/L_0 = exp[-(t/T_50)^B],
+```
 and apparently we use B=1.5
 so
+```math
 L(t)/L_0 = exp[-(t/T_Ref)(I/I_0)^-0.8(RGB/255)^3.3]
+```
 According to GPT at least, This is very close to what panel vendors internally use. We substitute (RGB/255)^2.2 for (I/I_0) because of the luminance current relation, then
-L(t)/L_0 = exp[-(t/T_Ref)(RGB/255)^1.54], where T_ref=C_0/L^n_Ref and roughly T_ref=T_50, Also let's take T_50 = 20000 hrs
+```math
+L(t)/L_0 = exp[-(t/T_Ref)(RGB/255)^1.54]
+``` where T_ref=C_0/L^n_Ref and roughly T_ref=T_50, Also let's take T_50 = 20000 hrs
 I am going to come back and tidy this up, but in the end without any means of getting real data this formula is going to end up wildly wrong. Should we get good data? No, because OLED manufacturers use secret techniques and proprietatry screen refresh and so on that makes the estimate far off anyway. The whole point is to detect very clear patterns in your viewing habits, if any, that will burn any OLED. So, let's stick with this.
 
 Edit: Currently working on the python part. The current project is a triple buffered DXGI screen capture program that captures at variable frame rate. There are better screen capture software out there like ffmpeg which is free. However, I wanted to try building one, and learnt a lot in the process. Having said that, although it can be optimized much more, and there are probably 50+ optimization options that I am not aware of, the triple buffer already makes it fast enough to be usable.
