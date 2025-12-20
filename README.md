@@ -39,7 +39,7 @@ This trick is common when trying to quantify an "effect" in this case magnitude 
 ```
 So anyway using 5 frames for prototyping, the Total damage over 5 frames is:
 ```math
-D_5 = \\sum{5}{i=1}\Delta D_i
+D_5 = \sum^{5}_{i=1}\Delta D_i
 ```
 Now,
 ```math
