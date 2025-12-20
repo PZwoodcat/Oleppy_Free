@@ -33,8 +33,10 @@ We propose using my limited knowledge from math modelling class to rewrite the s
 ```math
 \frac{L(t)}{L_0}=\exp^{-D(t)}, \quad \text{with} \quad D(t)={\left(\frac{t}{\tau}\right)}^{\beta}
 ```
-where J_0 = reference current density, C_0 = fitted constant at J_0, n = luminance–lifetime exponent, m = current acceleration exponent
-we try n = 1.5, m=2.3
+This trick is common when trying to quantify an "effect" in this case magnitude of wear. What we want to define is the following:
+```math
+\DeltaD_i={\left(\frac{\Deltat}{\tau\left(L_i\right)}\right)}^{\beta},\quad \text{where frame duration }=\Deltat\quad \text{and luminance at frame }i = L_i
+```
 So anyway roughly 
 ```math
 C ∝ (I/I_0)^{0.8}
