@@ -13,7 +13,7 @@ the wear maps look really cool, and who knows? It might actually show you someth
 This project will be based off my reading of these 2 papers, as well as whatever knowledge summarization GPT cooks up. 
 First paper - https://hal.science/hal-02465792/document - This one is often referenced in discussions of OLED burn in. It is a multi-factor study of OLED degradation across multiple factors such as driving current, temperature and time.
 Second paper - https://www.mdpi.com/2076-3417/11/1/74?utm_source=chatgpt.com - for cross-referencing
-
+If you do not like math, feel free to skip this section, because accurate prediction of OLED lifetime relies on equipment, not math. But we do not want to buy expansive equipment here, so let's make a vaguely correct estimate.
 First,
 ```math
 L \propto \left(\frac{RGB}{255}\right)^{2.2}
@@ -43,16 +43,22 @@ D_5 = \sum^{5}_{i=1}\Delta D_i
 ```
 Now,
 ```math
-L/L_0 = \exp^{-D_5},
+\frac{L}{L_0} = \exp^{-D_5},
 ```
 It has been tested sufficiently (I think?) that 
 ```math
-\tau(L) \prop L^{-n}, \quad \text{with} \quad n=1.4-1.8
+\tau(L) \propto L^{-n}, \quad \text{with} \quad n=1.4-1.8
 ```
 so
 ```math
 \tau(L_i) = \tau_{Ref}{\left(\frac{L_i}{L_{Ref}}\right)}^{-n}
 ```
+Substituting into damage increment:
+```math
+\Delta D_i={\left(\frac{\Delta t}{\tau_{Ref}\right}^{\beta}{\left(\frac{L_i}{L_{Ref}}\right)}}^{n\beta}
+```
+Finally,
+\frac{L}{L_0} = \exp\left[-{\left(\frac{\Delta t}{\tau_{Ref}\right}^{\beta}\sum^5_{i=1}{\left(\frac{L_i}{L_{Ref}}\right)}}^{n\beta}\right]
 According to GPT at least, This is very close to what panel vendors internally use. We substitute (RGB/255)^2.2 for (I/I_0) because of the luminance current relation, then
 ```math
 L(t)/L_0 = exp[-(t/T_Ref)(RGB/255)^{1.54}]
