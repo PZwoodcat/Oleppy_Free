@@ -37,18 +37,21 @@ This trick is common when trying to quantify an "effect" in this case magnitude 
 ```math
 \Delta D_i={\left(\frac{\Delta t}{\tau\left(L_i\right)}\right)}^{\beta},\quad \text{where frame duration }=\Delta t\quad \text{and luminance at frame }i = L_i
 ```
-So anyway roughly 
+So anyway using 5 frames for prototyping, the Total damage over 5 frames is:
 ```math
-C ∝ (I/I_0)^{0.8}
+D_5 = \Sum{5}{i=1}\Delta D_i
 ```
 Now,
 ```math
-L(t)/L_0 = exp[-(t/T_50)^B],
+L/L_0 = \exp^{-D_5},
 ```
-and apparently we use B=1.5
+It has been tested sufficiently (I think?) that 
+```math
+\tau(L) \prop L^{-n}, \quad \text{with} \quad n=1.4-1.8
+```
 so
 ```math
-L(t)/L_0 = exp[-(t/T_Ref)(I/I_0)^{-0.8}(RGB/255)^{3.3}]
+\tau(L_i) = \tau_{Ref}{\left(\frac{L_i}{L_{Ref}}\right)}^{-n}
 ```
 According to GPT at least, This is very close to what panel vendors internally use. We substitute (RGB/255)^2.2 for (I/I_0) because of the luminance current relation, then
 ```math
