@@ -27,7 +27,11 @@ OLEDs have a non-linear I-V curve
 
 Separately, it is usually agreed that the stretched exponential model works well for the early to mid life of an OLED. Typically, a consumer will stop using the OLED after L50, so this model is good enough. At any rate, wear rapidly accelerates after L50, and there isn't really a good model for the decay except for some suggestions of a separate exponential that is much steeper. At any rate, most agree that
 ```math
-\frac{L(t)}{L_0}=\exp^{\[-(t/\tau)^{\beta}\]}
+\frac{L(t)}{L_0}=\exp^{-(t/\tau)^{\beta}}
+```
+We propose using my limited knowledge from math modelling class to rewrite the stretched exponential as a damage accumulation model:
+```math
+\frac{L(t)}{L_0}=\exp^{-D(t)}, with D(t)={\frac{t}{\tau}}^{\beta}
 ```
 where J_0 = reference current density, C_0 = fitted constant at J_0, n = luminance–lifetime exponent, m = current acceleration exponent
 we try n = 1.5, m=2.3
