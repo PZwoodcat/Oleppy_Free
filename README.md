@@ -31,7 +31,7 @@ Separately, it is usually agreed that the stretched exponential model works well
 ```
 We propose using my limited knowledge from math modelling class to rewrite the stretched exponential as a damage accumulation model:
 ```math
-\frac{L(t)}{L_0}=\exp^{-D(t)}, with D(t)={\frac{t}{\tau}}^{\beta}
+\frac{L(t)}{L_0}=\exp^{-D(t)}, \quad \text{with} \quad D(t)={\left(\frac{t}{\tau}\right)}^{\beta}
 ```
 where J_0 = reference current density, C_0 = fitted constant at J_0, n = luminance–lifetime exponent, m = current acceleration exponent
 we try n = 1.5, m=2.3
