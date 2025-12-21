@@ -61,6 +61,14 @@ Finally,
 ```math
 \frac{L}{L_0} = \exp\left[-{\left(\frac{\Delta t}{\tau_{Ref}}\right)}^{\beta}\sum^5_{i=1}{\left(\frac{L_i}{L_{Ref}}\right)}^{n\beta}\right]
 ```
+Giving us a 5-frame wear formula. Since
+```math
+L_i \propto {\left(\frac{{RGB}_i}{255}\right)}^2.2
+```
+So,
+```math
+\frac{L_i}{L_{ref}} = {\left(\frac{{RGB}_i}{255}\right)}^2.2
+```
 According to GPT at least, This is very close to what panel vendors internally use. We substitute (RGB/255)^2.2 for (I/I_0) because of the luminance current relation, then
 ```math
 L(t)/L_0 = exp[-(t/T_Ref)(RGB/255)^{1.54}]
